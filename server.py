@@ -1,0 +1,6 @@
+from flask_app import app
+from flask_app.controllers import users, products
+
+if __name__ == '__main__':
+    # app.run(port=4242)
+    app.run(debug=True)

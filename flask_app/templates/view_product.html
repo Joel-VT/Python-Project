@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thrift Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body style="background-color: hotpink;">
+    <nav class="navbar bg-primary text-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/welcome">
+                <iconify-icon icon="bi:shop" width="30" height="24" class="d-inline-block align-text-top">
+                </iconify-icon>
+                <span class="navbar-brand mb-0 h1">Thrift Store</span>
+            </a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit">Search</button>
+            </form>
+            <div class="d-flex align-items-center">
+                <a href="/profile" class="text-dark fw-semibold text-decoration-none me-5">
+                    <iconify-icon icon="healthicons:ui-user-profile" width="30" height="24"
+                        class="d-inline-block align-text-top"></iconify-icon>
+                    Profile
+                </a>
+                <a href="/view/cart" class="text-decoration-none fw-semibold text-dark">
+                    <iconify-icon icon="akar-icons:cart" width="30" height="24" class="d-inline-block align-text-top">
+                    </iconify-icon>
+                    Cart({{user.kart|length}})
+                </a>
+                <a href="/logout" class="text-decoration-none fw-semibold text-dark ms-5">
+                    <iconify-icon icon="carbon:logout" width="30" height="24" class="d-inline-block align-text-top">
+                    </iconify-icon>
+                    Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar bg-info text-dark px-2">
+        <ul class="nav align-items-center nav-fill w-100">
+            <li class="nav-item fw-semibold">
+                Shop by category:
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/show/1/category">Men</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/show/2/category">Women</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/show/3/category">Computers and Accessories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/show/4/category">Video Games</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/show/5/category">Music</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/show/6/category">Jewelry</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/show/7/category">Watches</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/show/8/category">Eyewear</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/show/9/category">Home</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container text-center p-3 mt-3 mb-3 rounded" style="background-color: #f7f2e6;">
+        <div class="card mx-auto" style="width: 45rem;">
+            <img src="{{ url_for('static', filename=product.image) }}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p class="card-text">{{product.description}}</p>
+                <p class="card-text">Price: ${{product.price}}</p>
+                <p class="card-text">Stock: {% if product.stock == 0 %}Out of Stock{% else %}{{product.stock}} remaining{% endif %}</p>
+                <a href="/add/{{product.productId}}/cart" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>

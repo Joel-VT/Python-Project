@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thrift Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body style="background-color: hotpink;">
+    <nav class="navbar bg-primary text-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/welcome">
+                <iconify-icon icon="bi:shop" width="30" height="24" class="d-inline-block align-text-top">
+                </iconify-icon>
+                <span class="navbar-brand mb-0 h1">Thrift Store</span>
+            </a>
+        </div>
+    </nav>
+    <div class="card text-bg-dark p-3" style="margin: 10px auto; width: 30%;">
+        <h2 class="text-warning text-center card-title">Register</h2>
+        <form action="/register" method="post">
+            <label for="first_name" class="form-label">First Name:</label>
+            {% for message in get_flashed_messages(category_filter=["first"]) %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
+            <input type="text" name="first_name" id="first_name" class="form-control mb-2">
+            <label for="last_name" class="form-label">Last Name:</label>
+            {% for message in get_flashed_messages(category_filter=["last"]) %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
+            <input type="text" name="last_name" id="last_name" class="form-control mb-2">
+            <label for="email" class="form-label">Email:</label>
+            {% for message in get_flashed_messages(category_filter=["email"]) %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
+            <input type="text" name="email" id="email" class="mb-2 form-control">
+            <label for="password" class="form-label">Password:</label>
+            {% for message in get_flashed_messages(category_filter=["pass"]) %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
+            <input type="password" name="password" id="password" class="mb-2 form-control">
+            <label for="confirm_password" class="form-label">Confirm Password:</label>
+            {% for message in get_flashed_messages(category_filter=["confirm"]) %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
+            <input type="password" name="confirm_password" id="confirm_password" class="mb-2 form-control">
+            <label for="address1" class="form-label">Address 1:</label>
+            {% for message in get_flashed_messages(category_filter=["address1"]) %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
+            <input type="text" name="address1" id="address1" class="mb-2 form-control">
+            <label for="address2" class="form-label">Address 2:</label>
+            {% for message in get_flashed_messages(category_filter=["address2"]) %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
+            <input type="text" name="address2" id="address2" class="mb-2 form-control">
+            <label for="zipcode" class="form-label">Zip Code:</label>
+            {% for message in get_flashed_messages(category_filter=["zipcode"]) %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
+            <input type="text" name="zipcode" id="zipcode" class="mb-2 form-control">
+            <label for="city" class="form-label">City:</label>
+            {% for message in get_flashed_messages(category_filter=["city"]) %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
+            <input type="text" name="city" id="city" class="mb-2 form-control">
+            <label for="state" class="form-label">State:</label>
+            {% for message in get_flashed_messages(category_filter=["state"]) %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
+            <input type="text" name="state" id="state" class="mb-2 form-control">
+            <label for="country" class="form-label">Country:</label>
+            {% for message in get_flashed_messages(category_filter=["country"]) %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
+            <input type="text" name="country" id="country" class="mb-2 form-control">
+            <label for="phone" class="form-label">Phone:</label>
+            {% for message in get_flashed_messages(category_filter=["phone"]) %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
+            <input type="text" name="phone" id="phone" class="mb-2 form-control">
+            <button class="btn btn-success">Register</button>
+        </form>
+        <p class="mt-2 text-center">Existing User? <a href="/">Login</a></p>
+    </div>
+    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
